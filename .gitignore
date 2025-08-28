@@ -1,0 +1,27 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# macOS
+.DS_Store
+
+# Output files
+*.md
+!README.md
+!requirements.txt
+
+# Audio files (to avoid committing large files)
+*.mp3
+*.mp4
+*.wav
+*.m4a
+*.flac
+*.ogg
+*.opus

@@ -1,0 +1,2 @@
+parakeet-mlx
+soundfile>=0.12.0
