@@ -62,18 +62,15 @@ source venv/bin/activate
 deactivate
 ```
 
-**Important:** You must activate the virtual environment every time you open a new terminal session to use the transcription script.
+**Note:** The included `transcribe.sh` script automatically handles virtual environment activation for you!
 
 ## Usage Guide
 
-### Basic Transcription
+### Quick Start (Recommended)
 
 ```bash
-# Activate virtual environment first
-source venv/bin/activate
-
-# Transcribe an audio file (creates output with same name + .md)
-python transcribe_podcast.py your_podcast.mp3
+# Simply use the wrapper script - no venv activation needed!
+./transcribe.sh your_podcast.mp3
 
 # Example: podcast.mp3 → podcast.md
 ```
@@ -81,7 +78,18 @@ python transcribe_podcast.py your_podcast.mp3
 ### Specify Custom Output
 
 ```bash
-python transcribe_podcast.py input_audio.mp3 -o custom_output.md
+./transcribe.sh input_audio.mp3 -o custom_output.md
+```
+
+### Alternative: Manual Virtual Environment
+
+If you prefer to manually manage the virtual environment:
+```bash
+# Activate virtual environment
+source venv/bin/activate
+
+# Run the Python script directly
+python transcribe_podcast.py your_podcast.mp3
 ```
 
 ### Adjust Memory Settings
@@ -89,20 +97,20 @@ python transcribe_podcast.py input_audio.mp3 -o custom_output.md
 For systems with limited memory or very long files:
 ```bash
 # Use smaller chunks (3 minutes instead of default 5)
-python transcribe_podcast.py long_podcast.mp3 --chunk-duration 180
+./transcribe.sh long_podcast.mp3 --chunk-duration 180
 ```
 
 ### Use Different Models
 
 ```bash
 # Default model (English, 600M parameters)
-python transcribe_podcast.py podcast.mp3
+./transcribe.sh podcast.mp3
 
 # Larger English model (1.1B parameters, better accuracy)
-python transcribe_podcast.py podcast.mp3 --model mlx-community/parakeet-tdt-1.1b-v2
+./transcribe.sh podcast.mp3 --model mlx-community/parakeet-tdt-1.1b-v2
 
 # Multilingual model (supports 25 languages)
-python transcribe_podcast.py podcast.mp3 --model mlx-community/parakeet-tdt-0.6b-v3
+./transcribe.sh podcast.mp3 --model mlx-community/parakeet-tdt-0.6b-v3
 ```
 
 ## Available Models

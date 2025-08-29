@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Falls back to: ./venv/bin/python if run directly
 """
 Audio transcription script using parakeet-mlx.
 Optimized for long podcast files.
