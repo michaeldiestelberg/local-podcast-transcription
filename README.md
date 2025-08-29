@@ -6,6 +6,7 @@ A powerful Python-based tool for transcribing podcast audio files into markdown 
 - [Installation](#installation)
 - [Virtual Environment](#virtual-environment)
 - [Usage Guide](#usage-guide)
+- [Raycast Integration](#raycast-integration)
 - [Available Models](#available-models)
 - [How It Works](#how-it-works)
 - [Troubleshooting](#troubleshooting)
@@ -111,6 +112,44 @@ For systems with limited memory or very long files:
 
 # Multilingual model (supports 25 languages)
 ./transcribe.sh podcast.mp3 --model mlx-community/parakeet-tdt-0.6b-v3
+```
+
+## Raycast Integration
+
+This tool includes a Raycast Script Command for quick access from anywhere on your Mac.
+
+### Setup
+
+1. **Add to Raycast**:
+   - Open Raycast Preferences → Extensions → Script Commands
+   - Click "+" and add the directory containing `transcribe-raycast.sh`
+   - The script will appear as "Transcribe Podcast" with a 🎙️ icon
+
+2. **Usage**:
+   - Open Raycast (⌘ + Space by default)
+   - Type "Transcribe Podcast"
+   - Enter the audio file path (supports `~` and relative paths)
+   - Optionally add an output path as the second argument
+   - Press Enter to start transcription
+
+### Features
+
+- **Silent mode**: Runs in the background
+- **Path expansion**: Automatically handles `~` and relative paths
+- **File validation**: Checks if audio file exists before processing
+- **Progress feedback**: Shows clear status messages with emojis
+- **No manual venv activation needed**: Script handles everything automatically
+
+### Example
+
+In Raycast, type:
+```
+Transcribe Podcast ~/Downloads/podcast.mp3
+```
+
+Or with custom output:
+```
+Transcribe Podcast ~/Downloads/podcast.mp3 ~/Documents/transcript.md
 ```
 
 ## Available Models
