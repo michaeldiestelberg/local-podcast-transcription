@@ -122,7 +122,7 @@ This tool includes a Raycast Script Command for quick access from anywhere on yo
 
 1. **Add to Raycast**:
    - Open Raycast Preferences → Extensions → Script Commands
-   - Click "+" and add the directory containing `transcribe-raycast.sh`
+   - Click "+" and add the directory containing `transcribe.sh`
    - The script will appear as "Transcribe Podcast" with a 🎙️ icon
 
 2. **Usage**:
@@ -134,10 +134,10 @@ This tool includes a Raycast Script Command for quick access from anywhere on yo
 
 ### Features
 
-- **Silent mode**: Runs in the background
+- **Full output mode**: Shows live, friendly progress inside Raycast
 - **Path expansion**: Automatically handles `~` and relative paths
 - **File validation**: Checks if audio file exists before processing
-- **Progress feedback**: Shows clear status messages with emojis
+- **Progress feedback**: Clear status messages with emojis (segments, speed, totals)
 - **No manual venv activation needed**: Script handles everything automatically
 
 ### Example
@@ -150,6 +150,13 @@ Transcribe Podcast ~/Downloads/podcast.mp3
 Or with custom output:
 ```
 Transcribe Podcast ~/Downloads/podcast.mp3 ~/Documents/transcript.md
+```
+
+### Dry Run (for testing arguments)
+
+You can verify paths and parameters without running the transcription:
+```
+./transcribe.sh ~/Downloads/podcast.mp3 -o ~/Documents/transcript.md --dry-run
 ```
 
 ## Available Models
